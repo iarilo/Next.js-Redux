@@ -1,0 +1,51 @@
+.container_blog {
+    display: flex;
+    margin-top: 5vw;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    margin: auto;
+
+    }
+    
+    .context_about{
+        color: #fc03ce;
+        margin: auto;
+    }
+
+    .content_about {
+        color: blue;
+    }
+    .container_all_product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .container_product{
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+    }
+
+   
+    .drand_product{
+        color: #b0aeae;
+    }
+
+    .container_price{
+        display: flex;
+        gap: 5px;
+    }
+    .text_price_product{
+        color: #b0aeae;
+    }
+
+    .number_price_product{
+       color: red;
+    }
+
+    .rub_price_product{
+        color: green;
+    }

@@ -1,19 +1,24 @@
-"use client"
-//import Image from "next/image";
 import styles from "./page.module.css";
 import Login from "../component/login/log-in";
-import { useAppSelector } from "@/redux/hooks/hooks";
+import { HomeData } from "./homeData";
+import { Metadata } from "next";
 
 
-export default function Home() {
-  const  username = useAppSelector((state) => state.reducerAuth.value.username);
-  const moderator = useAppSelector((state) => state.reducerAuth.value.isModerator);
+
+export const metadata:Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
+  title:'Домашняя',
+  description:'Описание домашней  страницы'
+}
+
+export default async function Home() {
+  await new Promise((resolve)=> setTimeout(resolve, 3000));
+  //throw Error("Помогите Home")
   return (
     <main className={styles.main}>
-      <h2 className={styles.content}>Essss</h2>
-      <Login/>
-      <h3 className={styles.user}>UserName: {username}</h3>
-      {moderator && <h2 className={styles.user}>Это модератор</h2>}
+      <h2 className={styles.content}>Redux from Next</h2>
+      <Login />
+      <HomeData />
     </main>
   );
 }

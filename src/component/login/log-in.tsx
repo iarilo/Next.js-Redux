@@ -16,7 +16,9 @@ const Login = () => {
 
   return (
     <div className= { styles.container} >
-      <input type="text" onChange={(e) => setUserName(e.target.value)} />
+      <input type="text" onChange={(e) => setUserName(e.target.value)} 
+      className={styles.input}
+      />
       <button  className={styles.button} onClick={onClockLogin}>
         авторизоваться
       </button>

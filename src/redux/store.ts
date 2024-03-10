@@ -11,7 +11,8 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./features/auth-slice";
-import { useStore} from "react-redux";
+import todoReducer from '@/redux/features/todos-slice'
+
 
 
 // export const storeConfig = configureStore({
@@ -32,6 +33,7 @@ export const storeConfig = () => {
 
 const rootReduser = combineReducers({
   reducerAuth: authReducer,
+  reducertodos: todoReducer
 });
 
 const configReduser = {

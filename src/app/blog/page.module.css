@@ -1,0 +1,12 @@
+.container_blog {
+display: flex;
+margin-top: 5vw;
+align-items: center;
+flex-direction: column;
+
+}
+
+.context_blog{
+    color: #000000;
+    margin: auto;
+}

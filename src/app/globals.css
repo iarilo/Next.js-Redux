@@ -86,7 +86,7 @@ body {
 }
 
 body {
-  background: #000000;
+  background: rgb(245 245 245);
   /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -105,4 +105,9 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.image_Poshta{
+  width: 100vw;
+  height: 50px;
 }

@@ -1,39 +1,6 @@
-import { createSlice, PayloadAction,createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState,AppDispath } from "../store";
+import { createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { deleteTodo } from "../actionTodo";
 
-
-
-//  ..................................
-// Типы для createAsyncThunk 
-//  AppDispath  это  тип   AppDispath = typeof storeConfig.dispatch   из  store;
-//  RootState это тип  RootState = ReturnType<typeof storeConfig.getState>  из store; 
-const createAppAsyncThunk = createAsyncThunk.withTypes<{
-  state: RootState
-  dispatch: AppDispath
-  rejectValue: string
-  extra: { s: string; n: number }
-}>()
-// Удаление 
-export const deleteTodo = createAppAsyncThunk(
-  "deleteTodo/todos",
-  async function (id, { rejectWithValue, dispatch }) {
-    try {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/todos/${id}`,
-        { method: "DELETE" }
-      );
-
-      if (!response.ok) {
-        throw new Error("Удаление не удалось, ошибка сервера");
-      }
-      dispatch(LogOut());
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-// ....................................
 
 type AuthState = {
   username: string;
@@ -87,7 +54,8 @@ const auth = createSlice({
 extraReducers: (builder) => {
   builder.addCase(deleteTodo.rejected,(state)=>{
     (state.value.status = "rejected");
-  });
+  })
+
 }
 
 
